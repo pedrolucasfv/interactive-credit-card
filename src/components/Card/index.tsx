@@ -25,14 +25,20 @@ const Card = ({
     <S.Wrapper>
       <S.Chip />
       <S.Flag src="/img/card/mastercard.png" />
-      <S.Number selected={numberSelected}>{numberCard}</S.Number>
+      <S.Number selected={numberSelected}>
+        {numberCard && numberCard}
+        {!numberCard && '#### #### #### ####'}
+      </S.Number>
       <S.CardHolder selected={cardHolderSelected}>
         <p>Card Holder</p>
-        {cardHolder}
+        {cardHolder && cardHolder}
+        {!cardHolder && 'João Candinha'}
       </S.CardHolder>
       <S.CardExp selected={expSelected}>
         <p>Expires</p>
-        {expMonth}/{expYear}
+        {expMonth && expMonth}
+        {!expMonth && 'MM'}/{expYear && expYear}
+        {!expYear && 'YY'}
       </S.CardExp>
     </S.Wrapper>
   )
