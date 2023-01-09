@@ -5,7 +5,7 @@ export default {
   title: 'Card',
   component: Card,
   args: {
-    numberCard: '2231 5273 2736 2716',
+    numberCard: '2231 5003 2736 2706',
     cardHolder: 'Pedro Lucas Ferreira Vieira',
     expMonth: '07',
     expYear: '96',
