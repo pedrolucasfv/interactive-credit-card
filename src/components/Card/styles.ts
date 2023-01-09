@@ -12,10 +12,7 @@ export const Wrapper = styled.main`
   color: white;
   width: 50rem;
   height: 30rem;
-  display: grid;
-  grid-template-columns: 13rem 24rem 9rem;
-  grid-template-rows: 7rem 12rem 7rem;
-  padding: 2rem;
+
   border-radius: 1rem;
   font-size: 1.6rem;
 `
@@ -36,7 +33,7 @@ export const Flag = styled.div<ImageProps>`
     background: url(${src});
     background-size: cover;
     background-position: center;
-    height: 100%;
+    height: 7rem;
     width: 9rem;
     grid-column: 3;
   `}
@@ -81,4 +78,48 @@ export const CardExp = styled.h2<SelectItem>`
     border: none;
     ${selected && borderModifier.true()}
   `}
+`
+
+export const FrontCard = styled.div`
+  display: grid;
+  grid-template-columns: 13rem 24rem 9rem;
+  grid-template-rows: 7rem 12rem 7rem;
+  padding: 2rem;
+`
+export const BackCard = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-around;
+  height: 100%;
+`
+
+export const Cvv = styled.div`
+  margin: 0 2rem;
+  p {
+    margin-left: 1rem;
+  }
+`
+
+export const CvvNumber = styled.h4`
+  background-color: white;
+  width: 47rem;
+  border-radius: 0.3rem;
+  height: 5rem;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 2rem;
+  margin-top: 0.8rem;
+`
+
+export const BlackLine = styled.div`
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 5rem;
+  width: 100%;
+  margin-top: 1.5rem;
+`
+export const BackFlag = styled.div`
+  margin-right: 2rem;
+  margin-bottom: 1rem;
 `
