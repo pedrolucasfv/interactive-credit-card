@@ -3,6 +3,9 @@ import styled from 'styled-components'
 export const Wrapper = styled.main`
   font-size: 2rem;
   font-weight: 600;
+  background-color: white;
+  width: 100%;
+  margin-right: 2rem;
 `
 
 export const Title = styled.div`
@@ -23,7 +26,7 @@ export const SelectBox = styled.div`
 export const Items = styled.div`
   padding: 1.5rem;
   padding-top: 0;
-  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
   animation: clickAnimation 0.3s forwards;
   border: 0.2rem solid gray;
 

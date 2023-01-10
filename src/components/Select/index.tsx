@@ -9,6 +9,9 @@ const Select = ({ items, title, value }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <S.Wrapper>
+      <S.SelectBox onClick={() => setIsOpen(!isOpen)}>
+        {value ? <S.Value>{value}</S.Value> : <S.Value>{title}</S.Value>}
+      </S.SelectBox>
       {isOpen && (
         <S.Items aria-hidden={!isOpen} onClick={() => setIsOpen(false)}>
           <S.Title role="heading">{title}</S.Title>
@@ -17,9 +20,6 @@ const Select = ({ items, title, value }: SelectProps) => {
           ))}
         </S.Items>
       )}
-      <S.SelectBox onClick={() => setIsOpen(!isOpen)}>
-        {value ? <S.Value>{value}</S.Value> : <S.Value>{title}</S.Value>}
-      </S.SelectBox>
     </S.Wrapper>
   )
 }
