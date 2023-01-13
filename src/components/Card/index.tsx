@@ -6,7 +6,7 @@ export type CardProps = {
   expMonth: string
   expYear: string
   cvv: string
-  numberSelected: boolean
+  numberSelected?: boolean
   cardHolderSelected?: boolean
   expSelected?: boolean
   cvvSelected?: boolean
@@ -29,7 +29,7 @@ const Card = ({
         <S.FrontCard>
           <S.Chip />
           <S.Flag src="/img/card/mastercard.png" />
-          <S.Number selected={numberSelected}>
+          <S.Number id="cardnumber" selected={numberSelected}>
             {numberCard && numberCard}
             {!numberCard && '#### #### #### ####'}
           </S.Number>

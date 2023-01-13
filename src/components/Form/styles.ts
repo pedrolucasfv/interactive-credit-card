@@ -20,7 +20,6 @@ export const Wrapper = styled.main`
 export const Title = styled.h2`
   font-weight: 500;
   margin-bottom: 0.4rem;
-  margin-top: 2rem;
 `
 
 export const CardNumber = styled.div``
