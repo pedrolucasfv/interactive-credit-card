@@ -1,21 +1,20 @@
 import Select from 'components/Select'
 import TextField from 'components/TextField'
-import { useState } from 'react'
 import * as S from './styles'
 
 export type FormProps = {
   onCard: (value: string) => void
+  onSelected: (value: string) => void
 }
 
-const Form = ({ onCard }: FormProps) => {
-  const [active, setActive] = useState('')
+const Form = ({ onCard, onSelected }: FormProps) => {
   return (
     <S.Wrapper>
-      <S.CardNumber>
+      <S.CardNumber onClick={() => onSelected('cardNumber')}>
         <TextField label="Card Number" labelFor="cardnumber" onCard={onCard} />
       </S.CardNumber>
-      <S.CardHolder>
-        <TextField label="Card Holder" labelFor="cardholder" />
+      <S.CardHolder onClick={() => onSelected('cardHolder')}>
+        <TextField label="Card Holder" labelFor="cardholder" onCard={onCard}/>
       </S.CardHolder>
       <S.Content>
         <S.ExpDate>
@@ -53,8 +52,8 @@ const Form = ({ onCard }: FormProps) => {
             />
           </S.Select>
         </S.ExpDate>
-        <S.Cvv>
-          <TextField label="CVV" labelFor="cvv" />
+        <S.Cvv onClick={() => onSelected('cvv')}>
+          <TextField label="CVV" labelFor="cvv" onCard={onCard} />
         </S.Cvv>
       </S.Content>
       <S.Button>Submit</S.Button>
