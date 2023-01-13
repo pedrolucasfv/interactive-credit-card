@@ -17,12 +17,17 @@ export const InputWrapper = styled.div`
 `
 
 export const Input = styled.input`
+  width: 100%;
   color: black;
   font-size: 2rem;
   padding: 0.6rem 0;
   background: transparent;
   border: 0;
   outline: none;
+  ::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 `
 
 export const Label = styled.label`
@@ -31,4 +36,5 @@ export const Label = styled.label`
   cursor: pointer;
 `
 
-export const Wrapper = styled.div``
+export const Wrapper = styled.div`
+`

@@ -6,12 +6,14 @@ export type TextFieldProps = {
   label?: string
   labelFor?: string
   initialValue?: string
+  type?: 'text' | 'number'
 } & InputHTMLAttributes<HTMLInputElement>
 
 const TextField = ({
   label,
   labelFor = '',
   initialValue = '',
+  type = 'text',
   onCard,
   ...props
 }: TextFieldProps) => {
@@ -27,7 +29,7 @@ const TextField = ({
     <S.Wrapper>
       {!!label && <S.Label htmlFor={labelFor}>{label}</S.Label>}
       <S.InputWrapper>
-        <S.Input type="text" onChange={onChange} value={value} {...props} />
+        <S.Input type={type} onChange={onChange} value={value} {...props} />
       </S.InputWrapper>
     </S.Wrapper>
   )

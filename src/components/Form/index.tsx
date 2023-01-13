@@ -11,10 +11,15 @@ const Form = ({ onCard, onSelected }: FormProps) => {
   return (
     <S.Wrapper>
       <S.CardNumber onClick={() => onSelected('cardNumber')}>
-        <TextField label="Card Number" labelFor="cardnumber" onCard={onCard} />
+        <TextField
+          label="Card Number"
+          labelFor="cardnumber"
+          onCard={onCard}
+          type="number"
+        />
       </S.CardNumber>
       <S.CardHolder onClick={() => onSelected('cardHolder')}>
-        <TextField label="Card Holder" labelFor="cardholder" onCard={onCard}/>
+        <TextField label="Card Holder" labelFor="cardholder" onCard={onCard} />
       </S.CardHolder>
       <S.Content>
         <S.ExpDate>
@@ -53,7 +58,7 @@ const Form = ({ onCard, onSelected }: FormProps) => {
           </S.Select>
         </S.ExpDate>
         <S.Cvv onClick={() => onSelected('cvv')}>
-          <TextField label="CVV" labelFor="cvv" onCard={onCard} />
+          <TextField label="CVV" labelFor="cvv" onCard={onCard} type="number" />
         </S.Cvv>
       </S.Content>
       <S.Button>Submit</S.Button>
