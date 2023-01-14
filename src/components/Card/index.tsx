@@ -24,7 +24,7 @@ const Card = ({
   cvvSelected = false
 }: CardProps) => {
   return (
-    <S.Wrapper>
+    <S.Wrapper selected={cvvSelected}>
       {!cvvSelected && (
         <S.FrontCard>
           <S.Chip />

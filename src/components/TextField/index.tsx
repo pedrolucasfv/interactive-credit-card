@@ -29,7 +29,13 @@ const TextField = ({
     <S.Wrapper>
       {!!label && <S.Label htmlFor={labelFor}>{label}</S.Label>}
       <S.InputWrapper>
-        <S.Input type={type} onChange={onChange} value={value} {...props} />
+        <S.Input
+          maxLength={10}
+          type={type}
+          onChange={onChange}
+          value={value}
+          {...props}
+        />
       </S.InputWrapper>
     </S.Wrapper>
   )

@@ -36,5 +36,4 @@ export const Label = styled.label`
   cursor: pointer;
 `
 
-export const Wrapper = styled.div`
-`
+export const Wrapper = styled.div``
