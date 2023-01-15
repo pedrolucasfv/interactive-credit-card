@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import * as S from './styles'
 
 export type CardProps = {
@@ -23,8 +24,18 @@ const Card = ({
   expSelected = false,
   cvvSelected = false
 }: CardProps) => {
+  const [direction, setDirection] = useState<'right' | 'left'>('right')
+
+  useEffect(() => {
+    function directionFlip() {
+      if (cvvSelected) setDirection('right')
+      else setDirection('left')
+    }
+    directionFlip()
+    console.log(cvvSelected)
+  }, [cvvSelected])
   return (
-    <S.Wrapper selected={cvvSelected}>
+    <S.Wrapper>
       {!cvvSelected && (
         <S.FrontCard>
           <S.Chip />

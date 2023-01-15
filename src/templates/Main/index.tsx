@@ -18,12 +18,9 @@ const Main = () => {
     if (selected == 'cardNumber') setNumberCard(value)
     else if (selected == 'cardHolder') setCardHolder(value)
     else if (selected == 'cvv') setCvv(value)
-    console.log(selected)
-    console.log(value)
   }
   const onSelected = (value: string) => {
     setSelected(value)
-    console.log(value)
   }
 
   useEffect(() => {

@@ -1,19 +1,10 @@
 import styled, { css } from 'styled-components'
 
 export const Wrapper = styled.main`
-  background: linear-gradient(
-    to bottom left,
-    #282828,
-    #212121,
-    #1a1a1a,
-    #131313,
-    #0a0a0a
-  );
   color: white;
   width: 50rem;
   height: 30rem;
 
-  border-radius: 1rem;
   font-size: 1.6rem;
 `
 type SelectItem = {
@@ -53,6 +44,10 @@ export const Number = styled.h2<SelectItem>`
     font-size: 4.3rem;
     border: none;
     ${selected && borderModifier.true()}
+    animation: move 400ms;
+    animation-delay: 250ms;
+    animation-fill-mode: backwards;
+    border
   `}
 `
 export const CardHolder = styled.h2<SelectItem>`
@@ -85,6 +80,24 @@ export const FrontCard = styled.div`
   grid-template-columns: 13rem 24rem 9rem;
   grid-template-rows: 7rem 12rem 7rem;
   padding: 2rem;
+  border-radius: 1rem;
+  background: linear-gradient(
+    to bottom left,
+    #282828,
+    #212121,
+    #1a1a1a,
+    #131313,
+    #0a0a0a
+  );
+  @keyframes loading {
+    0% {
+      transform: rotateY(0);
+    }
+    100% {
+      transform: rotateY(180deg);
+    }
+  }
+  animation: loading 1.2s linear normal;
 `
 export const BackCard = styled.div`
   display: flex;
@@ -92,6 +105,24 @@ export const BackCard = styled.div`
   align-items: flex-end;
   justify-content: space-around;
   height: 100%;
+  border-radius: 1rem;
+  background: linear-gradient(
+    to bottom left,
+    #282828,
+    #212121,
+    #1a1a1a,
+    #131313,
+    #0a0a0a
+  );
+  @keyframes loading {
+    0% {
+      transform: rotateY(180deg);
+    }
+    100% {
+      transform: rotateY(0);
+    }
+  }
+  animation: loading 1.2s linear normal;
 `
 
 export const Cvv = styled.div`
