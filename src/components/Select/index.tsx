@@ -4,8 +4,9 @@ export type SelectProps = {
   title: string
   items: string[]
   value?: string
+  onCard: (value: string) => void
 }
-const Select = ({ items, title, value }: SelectProps) => {
+const Select = ({ items, title, value, onCard }: SelectProps) => {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <S.Wrapper>
@@ -16,7 +17,9 @@ const Select = ({ items, title, value }: SelectProps) => {
         <S.Items aria-hidden={!isOpen} onClick={() => setIsOpen(false)}>
           <S.Title role="heading">{title}</S.Title>
           {items.map((item, index) => (
-            <S.Option key={index}> {item} </S.Option>
+            <S.Option key={index} onClick={() => onCard(item)}>
+              {item}
+            </S.Option>
           ))}
         </S.Items>
       )}

@@ -47,7 +47,6 @@ export const Number = styled.h2<SelectItem>`
     animation: move 400ms;
     animation-delay: 250ms;
     animation-fill-mode: backwards;
-    border
   `}
 `
 export const CardHolder = styled.h2<SelectItem>`
@@ -153,4 +152,8 @@ export const BlackLine = styled.div`
 export const BackFlag = styled.div`
   margin-right: 2rem;
   margin-bottom: 1rem;
+`
+
+export const Selected = styled.div`
+  border: solid 0.5rem white;
 `

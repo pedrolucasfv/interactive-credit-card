@@ -9,15 +9,14 @@ export const Wrapper = styled.main`
 `
 export const Form = styled.div`
   height: 100%;
-  position: absolute;
+  position: relative;
   top: 15rem;
   left: -4rem;
   z-index: 10;
 `
 export const Card = styled.div`
-  height: 100%;
   z-index: 20;
-  position: relative;
+  position: absolute;
 `
 
 export const Content = styled.div`

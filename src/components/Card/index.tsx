@@ -24,19 +24,27 @@ const Card = ({
   expSelected = false,
   cvvSelected = false
 }: CardProps) => {
-  const [direction, setDirection] = useState<'right' | 'left'>('right')
+  const [direction, setDirection] = useState(false)
+  const [front, setFront] = useState(false)
+  useEffect(() => {
+    function directionFlip() {
+      if (cvvSelected) setFront(true)
+      else setFront(false)
+    }
+    directionFlip()
+  }, [direction])
 
   useEffect(() => {
     function directionFlip() {
-      if (cvvSelected) setDirection('right')
-      else setDirection('left')
+      if (cvvSelected) {
+        setDirection(true)
+      } else setDirection(false)
     }
     directionFlip()
-    console.log(cvvSelected)
   }, [cvvSelected])
   return (
     <S.Wrapper>
-      {!cvvSelected && (
+      {!front && (
         <S.FrontCard>
           <S.Chip />
           <S.Flag src="/img/card/mastercard.png" />
@@ -52,12 +60,12 @@ const Card = ({
           <S.CardExp selected={expSelected}>
             <p>Expires</p>
             {expMonth && expMonth}
-            {!expMonth && 'MM'}/{expYear && expYear}
+            {!expMonth && 'MM'}/{expYear && expYear.slice(2)}
             {!expYear && 'YY'}
           </S.CardExp>
         </S.FrontCard>
       )}
-      {cvvSelected && (
+      {front && (
         <S.BackCard>
           <S.BlackLine />
           <S.Cvv>

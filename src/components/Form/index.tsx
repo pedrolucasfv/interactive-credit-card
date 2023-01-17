@@ -5,9 +5,10 @@ import * as S from './styles'
 export type FormProps = {
   onCard: (value: string) => void
   onSelected: (value: string) => void
+  onExpDate: (value: string) => void
 }
 
-const Form = ({ onCard, onSelected }: FormProps) => {
+const Form = ({ onCard, onSelected, onExpDate }: FormProps) => {
   return (
     <S.Wrapper>
       <S.CardNumber onClick={() => onSelected('cardNumber')}>
@@ -26,6 +27,7 @@ const Form = ({ onCard, onSelected }: FormProps) => {
           <S.Title>Expiration Date</S.Title>
           <S.Select>
             <Select
+              onCard={onExpDate}
               items={[
                 '1',
                 '2',
@@ -43,6 +45,7 @@ const Form = ({ onCard, onSelected }: FormProps) => {
               title="Month"
             />
             <Select
+              onCard={onExpDate}
               items={[
                 '2023',
                 '2024',

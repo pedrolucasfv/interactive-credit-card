@@ -7,6 +7,8 @@ const Main = () => {
   const [numberCard, setNumberCard] = useState('')
   const [cardHolder, setCardHolder] = useState('')
   const [cvv, setCvv] = useState('')
+  const [month, setMonth] = useState('')
+  const [year, setYear] = useState('')
 
   const [isNumberCard, setIsNumberCard] = useState(false)
   const [isCardHolder, setIsCardHolder] = useState(false)
@@ -22,7 +24,10 @@ const Main = () => {
   const onSelected = (value: string) => {
     setSelected(value)
   }
-
+  const onExpDate = (value: string) => {
+    if (value.length > 2) setYear(value)
+    else setMonth(value)
+  }
   useEffect(() => {
     function select() {
       if (selected == 'cardNumber') {
@@ -48,8 +53,8 @@ const Main = () => {
           <Card
             numberCard={numberCard}
             cardHolder={cardHolder}
-            expMonth="02"
-            expYear="12"
+            expMonth={month}
+            expYear={year}
             cvv={cvv}
             cardHolderSelected={isCardHolder}
             cvvSelected={isCvv}
@@ -57,7 +62,11 @@ const Main = () => {
           />
         </S.Card>
         <S.Form>
-          <Form onCard={onInput} onSelected={onSelected} />
+          <Form
+            onExpDate={onExpDate}
+            onCard={onInput}
+            onSelected={onSelected}
+          />
         </S.Form>
       </S.Content>
     </S.Wrapper>
